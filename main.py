@@ -8,6 +8,7 @@ from Class.logger import Logger  # Assurez-vous que l'importation est correcte
 from Class.cookies import CookieHandler
 from Class.login import OpenClassRoomsLogin
 from Class.closePopUp import ClosePopUp
+from Class.openclassrooms import OpenClassRoomsActions
 
 logger = Logger()
 
@@ -85,6 +86,14 @@ login.login()
 
 closePopUp = ClosePopUp(driver)
 closePopUp.close_pop_up()
+
+openClassRoomsActions = OpenClassRoomsActions(driver)
+openClassRoomsActions.search_words("Python")
+openClassRoomsActions.selected_course()
+openClassRoomsActions.show_tittle_course()
+
+# Logout
+login.logout()
 
 # Ferme le WebDriver
 logger.log("access-selenium", "Fermeture du WebDriver.")

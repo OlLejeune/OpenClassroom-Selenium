@@ -16,7 +16,7 @@ class ClosePopUp :
     def close_pop_up(self):
         try:
             print(f"Clicking button: {By.CSS_SELECTOR} {'body > div.sc-dIouRR.kMwfeN.sc-kgflAQ.jQCwPs.MuiDialog-root.MuiModal-root > div.sc-fLlhyt.jDOnlw.MuiDialog-container.MuiDialog-scrollPaper > div > div > div.sc-lbOyJj.iOFAkR > div:nth-child(1) > button > svg > path'}")
-            logger.log("access_OpenClassRoom", f"Clicking button: {By.CSS_SELECTOR} {'body > div.sc-dIouRR.kMwfeN.sc-kgflAQ.jQCwPs.MuiDialog-root.MuiModal-root > div.sc-fLlhyt.jDOnlw.MuiDialog-container.MuiDialog-scrollPaper > div > div > div.sc-lbOyJj.iOFAkR > div:nth-child(1) > button > svg > path'}")
+            logger.log("access-openclassrooms", f"Clicking button: {By.CSS_SELECTOR} {'body > div.sc-dIouRR.kMwfeN.sc-kgflAQ.jQCwPs.MuiDialog-root.MuiModal-root > div.sc-fLlhyt.jDOnlw.MuiDialog-container.MuiDialog-scrollPaper > div > div > div.sc-lbOyJj.iOFAkR > div:nth-child(1) > button > svg > path'}")
             button = self.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'body > div.sc-dIouRR.kMwfeN.sc-kgflAQ.jQCwPs.MuiDialog-root.MuiModal-root > div.sc-fLlhyt.jDOnlw.MuiDialog-container.MuiDialog-scrollPaper > div > div > div.sc-lbOyJj.iOFAkR > div:nth-child(1) > button > svg > path')))
             button.click()
             logger.log("log-openclassrooms", f"Pop up bien fermé !")

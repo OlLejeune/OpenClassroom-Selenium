@@ -34,3 +34,22 @@ class OpenClassRoomsLogin(OpenClassRoomsActions):
             logger.log("log-openclassrooms", f"Vous êtes maintenant connecter avec le compte {self.username}")
         except Exception as e:
             logger.log("error-openclassrooms", f"Erreur lors de la connexion sur OpenClassrooms : {e}")
+
+            
+    def logout(self):
+        try:
+            logger.log("info", "Cliquer sur l'icône de compte")
+            self.click_element(By.CSS_SELECTOR, "div[data-testid='avatar-root']")
+            logger.log("info", "Etape reussie")
+            time.sleep(2)
+
+            logger.log("info", "Cliquer sur le bouton de déconnexion")
+            self.click_element(By.CSS_SELECTOR,"div[data-testid='avatar-root']")
+            logger.log("info", "Déconnexion réussie")
+            time.sleep(2)
+
+        except Exception as e:
+            logger.log("error", f"Erreur lors de la déconnexion: {e}")
+            print(f"Erreur lors de la déconnexion: {e}")
+            self.driver.quit()
+            raise
