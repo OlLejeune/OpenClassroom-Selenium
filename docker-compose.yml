@@ -15,7 +15,7 @@ services:
   selenium:
     image: selenium/standalone-chrome
     ports:
-      - "4444:4444"
+      - "4445:4444"
 
   tests:
     build:
@@ -26,6 +26,6 @@ services:
       - selenium #Dépend du service Selnium
     environment:
       - SELENIUM_HUB_HOST=selenium
-      - SELENIUM_HUB_PORT=4444
+      - SELENIUM_HUB_PORT=4445
     volumes:
       - ./logs:/app/logs  # Monte le répertoire des logs sur l'hôte
