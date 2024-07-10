@@ -5,6 +5,7 @@ FROM python:3.8-slim
 RUN pip install selenium
 RUN pip install urllib3
 RUN pip install requests
+RUN pip install wcag-contrast-ratio
 
 # Installe wget, gnupg2 et unzip
 RUN apt-get update && apt-get install -y wget gnupg2 unzip

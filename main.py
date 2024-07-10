@@ -9,7 +9,7 @@ from Class.cookies import CookieHandler
 from Class.login import OpenClassRoomsLogin
 from Class.closePopUp import ClosePopUp
 from Class.openclassrooms import OpenClassRoomsActions
-
+from Class.buttonVIsibilityChecker import ButtonVisibilityChecker
 logger = Logger()
 
 
@@ -87,11 +87,14 @@ login.login()
 closePopUp = ClosePopUp(driver)
 closePopUp.close_pop_up()
 
+
 openClassRoomsActions = OpenClassRoomsActions(driver)
 openClassRoomsActions.search_words("Python")
 openClassRoomsActions.selected_course()
 openClassRoomsActions.show_tittle_course()
 
+button_checker = ButtonVisibilityChecker(driver)
+button_checker.check_contrast()
 # Logout
 login.logout()
 
